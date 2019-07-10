@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Nosotros
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h2>Hola soy la página nosotros</h2>
+    <ion-button>Default</ion-button>
+    <!-- lista -->
+    <ion-card>
+        <ion-card-header>
+            Mi primera lista
+        </ion-card-header>
+        <ion-list>
+            <ion-button expand="full" color="secondary" ion-item *ngFor="let item of lista">
+                <ion-icon name="cart" item-start [ngStyle]="{'color':item.color}"></ion-icon>
+                {{item.titulo}}
+            </ion-button>
+        </ion-list>
+    </ion-card>
+    <!-- lista -->
+</ion-content>

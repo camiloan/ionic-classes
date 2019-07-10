@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-icon slot="icon-only" name="contact"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title text-center>Home</ion-title>
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon slot="icon-only" name="search"></ion-icon>
+            </ion-button>
+            <ion-button color="secondary">
+                <ion-icon slot="icon-only" name="more"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <p>Ejemplo de cómo ir a otra página</p>
+    <ion-button (click)="goToMasinfoPage()">
+        <ion-icon slot="start" name="star"></ion-icon>
+        A otra página
+    </ion-button>
+</ion-content>
