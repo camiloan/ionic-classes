@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MasinfoPage } from '../masinfo/masinfo.page';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -14,7 +13,7 @@ export class Tab1Page {
   ) {
   }
   goToMasinfoPage(){
-    this.navCtrl.navigateForward('masinfo');
+    this.navCtrl.navigateForward(`masinfo/${0}`);
   }
 
 }
