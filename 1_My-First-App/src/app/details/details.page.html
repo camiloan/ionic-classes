@@ -1,9 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>details</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title> {{data.title}}</ion-title>
+    </ion-toolbar>
 </ion-header>
-
-<ion-content>
-
+<ion-content fullscreen class="ion-padding">
+    <!-- <ion-icon name="logo-{{data.icon}}" style="color: '{{data.color}}';" size="large"></ion-icon> -->
+    <ion-icon [name]="'logo-' + data.icon" [ngStyle]="{'color':data.color}" size="large"></ion-icon>
+    <p>{{data.description}}</p>
 </ion-content>

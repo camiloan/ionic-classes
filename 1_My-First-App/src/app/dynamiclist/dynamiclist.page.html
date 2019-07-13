@@ -1,9 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>dynamiclist</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            <h2>Lista Dinamica</h2>
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+    <ion-list>
+        <ion-item button *ngFor="let item of miLista" (click)="openDetailsWithState(item)">
+            <ion-icon slot="start" [name]="'logo-'+item.icon" [ngStyle]="{'color':item.color}" size="large"> </ion-icon>
+            <ion-label>
+                <h2>{{item.title}}</h2>
+            </ion-label>
+        </ion-item>
+    </ion-list>
 </ion-content>

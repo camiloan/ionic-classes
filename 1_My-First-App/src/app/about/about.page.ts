@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-about',
@@ -16,9 +17,47 @@ export class AboutPage implements OnInit {
       color:"#999"
     }
   ]
-  constructor() { }
+  constructor(private alertCtrl: AlertController) { }
+  
+  async alertBasic(){
+    const miAlerta= await this.alertCtrl.create({
+      header:'Alert',
+      message: 'This is an alert message',
+      buttons:['Ok']
+    });
+    await miAlerta.present();
+  }
+  async alertBasic2(){
+    const miAlerta2= await this.alertCtrl.create({
+      header:'Login',
+      inputs: [
+        {
+          name: 'nombre',
+          type: 'text',
+          placeholder: 'Ingrese su nombre'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Guardar',
+          handler: () => {
+            console.log('Confirm Save');
+          }
+        }
+      ]
+    });
+    await miAlerta2.present();
+  }
 
   ngOnInit() {
   }
+  
 
 }

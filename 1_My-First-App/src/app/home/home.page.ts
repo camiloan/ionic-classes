@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,10 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-
-  constructor( private navCtrl: NavController ) { }
-  goToMasinfoPage(){
-    this.navCtrl.navigateForward(`masinfo/${0}`);
+  constructor( private router:Router) { }
+  openProvider(){
+    this.router.navigate(['/provider']);
   }
   ngOnInit() {
   }
-
 }

@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
@@ -12,7 +13,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../home/home.module#HomePageModule'
           }
         ]
       },
@@ -21,7 +22,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../dynamiclist/dynamiclist.module#DynamiclistPageModule'
           }
         ]
       },
@@ -56,7 +57,6 @@ const routes: Routes = [
     pathMatch: 'full'
   }
 ];
-
 @NgModule({
   imports: [
     RouterModule.forChild(routes)
