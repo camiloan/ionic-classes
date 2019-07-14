@@ -12,7 +12,9 @@ const apiUrl = "/api/v1/products";
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+  }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -24,6 +26,14 @@ export class ApiService {
       return of(result as T);
     };
   }
+  getProducts (): Observable<Product[]> {
+    return this.http.get<Product[]>(apiUrl)
+      .pipe(
+        tap(heroes => console.log('fetched products')),
+        catchError(this.handleError('getProducts', []))
+      );
+  }
+
   getProduct(id): Observable<Product> {
     const url = `${apiUrl}/${id}`;
     return this.http.get<Product>(url).pipe(
@@ -56,3 +66,4 @@ export class ApiService {
     );
   }
 }
+

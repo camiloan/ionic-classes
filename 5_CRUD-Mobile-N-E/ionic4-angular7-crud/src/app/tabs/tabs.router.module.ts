@@ -9,7 +9,7 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
@@ -18,49 +18,49 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2',
+        path: 'details',
         children: [
           {
             path: '',
-            loadChildren: '../dynamiclist/dynamiclist.module#DynamiclistPageModule'
+            loadChildren: '..//details/details.module#DetailsPageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'add',
         children: [
           {
             path: '',
-            loadChildren: '../about/about.module#AboutPageModule'
+            loadChildren: '../add/add.module#AddPageModule'
           }
         ]
       },  
       {
-        path: 'tab4',
+        path: 'edit',
         children: [
           {
             path: '',
-            loadChildren: '../contact/contact.module#ContactPageModule'
+            loadChildren: '../edit/edit.module#EditPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forChild(routes)
   ],
   exports: [RouterModule]
 })
