@@ -1,12 +1,21 @@
 <ion-header no-border>
     <ion-toolbar color="primary">
-        <ion-title text-center>Componentes</ion-title>
+        <ion-buttons slot="start">
+            <!-- <ion-button (click)="toggleMenu()">
+                <ion-icon slot="icon-only" name="menu"></ion-icon>
+            </ion-button> -->
+            <ion-buttons slot="start">
+                <ion-menu-button menu="firstMenu"></ion-menu-button>
+            </ion-buttons>
+        </ion-buttons>
+
+        <ion-title text-center>Componentes!!!</ion-title>
     </ion-toolbar>
 </ion-header>
 <ion-content color="dark">
-    <ion-list no-border>
-        <ion-item color="dark" *ngFor="let c of componentes" [routerLink]="c.redirectTo" detail>
-            <ion-icon slot="start" [name]="c.icon"></ion-icon>
+    <ion-list>
+        <ion-item color="dark" *ngFor="let c of componentes | async" [routerLink]="c.redirectTo" detail>
+            <ion-icon color="secondary" slot="start" [name]="c.icon"></ion-icon>
             <ion-label>
                 {{c.name}}
             </ion-label>
