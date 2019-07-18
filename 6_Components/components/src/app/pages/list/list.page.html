@@ -1,9 +1,9 @@
 <app-header titulo="Listas - Sliding"></app-header>
 
-<ion-content>
-    <ion-list #lista>
+<ion-content color="dark">
+    <ion-list #lista no-padding>
         <ion-item-sliding *ngFor="let user of users|async">
-            <ion-item>
+            <ion-item color="dark">
                 <ion-label>
                     <h3>{{user.name}}</h3>
                     <p>{{user.email}}</p>

@@ -24,6 +24,6 @@ export class InfiniteScrollPage implements OnInit {
     const nuevoArr = Array(20);
     this.data.push(...nuevoArr);
     event.target.complete();
-  },1000);
+  },1500);
   }
 }

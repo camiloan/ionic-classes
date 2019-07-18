@@ -23,7 +23,8 @@ export class ModalPage implements OnInit {
     });
     await modal.present();
     const {data}=await modal.onDidDismiss();
-    console.log('Rertorno del modal',data);
+    console.log('Rertorno del modal');
+    console.log(JSON.stringify(data));
   }
 
 }
