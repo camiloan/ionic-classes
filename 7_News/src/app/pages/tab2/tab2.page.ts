@@ -16,20 +16,30 @@ export class Tab2Page {
 
   }
   cambioCategoria(event){
+    event.target.disabled=false;
     this.noticias=[];
     this.cargarNoticias(event.detail.value); 
-
-  
   }
-  cargarNoticias(categoria:string){
+  loadData(event){
+    //console.log(event);
+    this.cargarNoticias(this.segment.value,event)
+  }
+  cargarNoticias(categoria:string,event?){
     this.noticiasService.getTopHeadlinesCategoria(categoria).subscribe(resp=>{
       console.log(categoria,resp);
+      if(resp.articles.length===0){
+        event.target.disabled=true;
+        event.target.complete();
+        return;
+      }
       this.noticias.push(...resp.articles);
+      if(event){
+        event.target.complete();
+      }
     });
   }
   ngOnInit() {
     this.segment.value=this.categorias[0];
-    this.cargarNoticias(this.segment.value)
+    this.cargarNoticias(this.categorias[0])
   }
-
 }
