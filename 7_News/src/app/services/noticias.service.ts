@@ -32,7 +32,7 @@ export class NoticiasService {
       this.categoriaPage=1;
       this.categoriaActual=categoria;
     }
-    console.log(`/top-headlines?country=us&category=${categoria}&page=${this.categoriaPage}`);
+    // console.log(`/top-headlines?country=us&category=${categoria}&page=${this.categoriaPage}`);
     return this.ejecutarQuery<RespuestaTopHeadlines>(`/top-headlines?country=us&category=${categoria}&page=${this.categoriaPage}`);
     // return this.http.get<RespuestaTopHeadlines>('https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=9451f6629e9347ec9e90c0f566860db6');
   }

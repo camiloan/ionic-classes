@@ -12,10 +12,13 @@ import { PopinfoComponent } from '../popinfo/popinfo.component';
 export class NoticiaComponent implements OnInit {
   @Input()noticia:Article;
   @Input()indice:number;
+  @Input()enFavoritos;
 
   constructor(private iab: InAppBrowser,private popoverCtrl: PopoverController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // console.log('Favoritos', this.enFavoritos);
+  }
   abrirNoticia(){
     const browser = this.iab.create(this.noticia.url,'_system');
     // console.log(this.noticia.url)
@@ -25,7 +28,8 @@ export class NoticiaComponent implements OnInit {
     const popover=await this.popoverCtrl.create({
       component: PopinfoComponent,
       componentProps:{
-        newChosen: noticia
+        newChosen: noticia,
+        newStatus: this.enFavoritos
       },
       event: evento,
       mode:'ios',

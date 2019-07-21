@@ -15,12 +15,12 @@ export class Tab1Page implements OnInit {
    this.cargarNoticias();
   }
   loadData(event){
-    console.log(event);
+    // console.log(event);
     this.cargarNoticias(event);
   }
   cargarNoticias(event?){
     this.noticiasServices.getTopHeadlines().subscribe(resp =>{
-      console.log('noticias',resp);
+      // console.log('noticias',resp);
       if(resp.articles.length===0){
         event.target.disabled=true;
         event.target.complete();

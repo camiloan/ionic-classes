@@ -26,7 +26,7 @@ export class Tab2Page {
   }
   cargarNoticias(categoria:string,event?){
     this.noticiasService.getTopHeadlinesCategoria(categoria).subscribe(resp=>{
-      console.log(categoria,resp);
+      // console.log(categoria,resp);
       if(resp.articles.length===0){
         event.target.disabled=true;
         event.target.complete();
