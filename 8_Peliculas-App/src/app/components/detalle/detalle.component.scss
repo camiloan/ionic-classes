@@ -1,0 +1,42 @@
+.poster-detalle-sobre {
+    position: relative;
+    top: -75px;
+    left: -10px;
+    margin-bottom: -75px;
+}
+
+.titulo {
+    width: 100%;
+    position: absolute;
+    color: white;
+    background-color: red;
+    padding: 5px 5px 60px 5px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.88+28,0.7+62,0+100 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.88) 28%, rgba(0, 0, 0, 0.7) 62%, rgba(0, 0, 0, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.88)), color-stop(28%, rgba(0, 0, 0, 0.88)), color-stop(62%, rgba(0, 0, 0, 0.7)), color-stop(100%, rgba(0, 0, 0, 0)));
+    /* Chrome4-9,Safari4-5 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.88) 28%, rgba(0, 0, 0, 0.7) 62%, rgba(0, 0, 0, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.88) 28%, rgba(0, 0, 0, 0.7) 62%, rgba(0, 0, 0, 0) 100%);
+    /* Opera 11.10-11.50 */
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.88) 28%, rgba(0, 0, 0, 0.7) 62%, rgba(0, 0, 0, 0) 100%);
+    /* IE10 preview */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.88) 28%, rgba(0, 0, 0, 0.7) 62%, rgba(0, 0, 0, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.titulo h1 {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+
+.card-actor {
+    height: 210px;
+}
+
+.actor-name {
+    position: relative;
+    top: 15px;
+}
