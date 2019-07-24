@@ -4,7 +4,7 @@
     <ion-list>
         <ion-item color="dark" *ngFor="let check of data" (click)="onClick(check)">
             <ion-label>{{check.name}}</ion-label>
-            <ion-checkbox mode="ios" [(ngModel)]="check.selected" [color]="check.name"></ion-checkbox>
+            <ion-checkbox [(ngModel)]="check.selected" [color]="check.name"></ion-checkbox>
         </ion-item>
     </ion-list>
 </ion-content>

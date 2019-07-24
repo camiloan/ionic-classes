@@ -16,8 +16,8 @@ export class DateTimePage implements OnInit {
       buttons: [{
         text: 'Save',
         handler: (evento) =>{
-          console.log('Clicked Save!');
           console.log(evento);
+          console.log('Clicked Save!');
         } 
       }, {
         text: 'Log',

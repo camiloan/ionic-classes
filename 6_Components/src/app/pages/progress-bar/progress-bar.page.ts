@@ -7,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressBarPage implements OnInit {
   porcentaje=0.5;
+  valor:number=50;
   constructor() { }
 
   ngOnInit() {
   }
   cambioRango(event){
     this.porcentaje=event.detail.value/100;
-    console.log(event.detail);
+    this.valor=event.detail.value;
+    //console.log(event.detail.value);
 
   }
 

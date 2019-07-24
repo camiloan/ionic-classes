@@ -110,3 +110,21 @@
     -webkit-animation-name: fadeOut;
     animation-name: fadeOut;
 }
+
+// ion-spinner {
+//     --color: #ffffff;
+// }
+ion-spinner {
+    --color: #ffffff;
+}
+
+.infinite-scroll-content-md .infinite-loading-text {
+    color: #ffffff;
+}
+
+.refresher-md .refresher-pulling-icon,
+.refresher-md .refresher-pulling-text,
+.refresher-md .refresher-refreshing-icon,
+.refresher-md .refresher-refreshing-text {
+    color: var(--ion-text-color, #fff);
+}

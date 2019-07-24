@@ -3,26 +3,27 @@
 <ion-content color="dark">
     <ion-list>
         <ion-list-header color="dark">
-            <ion-label>Datos de Nacimiento:</ion-label>
+            <ion-title text-center>Datos de Nacimiento</ion-title>
         </ion-list-header>
         <ion-item color="dark">
-            <ion-label>Fecha de Nacimiento</ion-label>
-            <ion-datetime placeholder="Nacimiento" display-format="YYYY MMMM DD" cancelText="Cancelar!!!" [ngModel]="fechaNaci.toISOString()" (ionChange)="cambioFecha($event)"></ion-datetime>
+            <ion-label color="secondary">Fecha de Nacimiento</ion-label>
+            <ion-datetime mode="ios" placeholder="Nacimiento" display-format="YYYY MMMM DD" cancelText="Cancelar!!!" [ngModel]="fechaNaci.toISOString()" (ionChange)="cambioFecha($event)"></ion-datetime>
         </ion-item>
-        <ion-list-header color="dark">
-            <ion-label>Restricciones:</ion-label>
+        <ion-list-header color="dark" text-center>
+            <ion-title text-center>Restricciones</ion-title>
         </ion-list-header>
         <ion-item color="dark">
-            <ion-label>Min y Max</ion-label>
-            <ion-datetime placeholder="yyyy-mm-dd" display-format="YYYY MMMM DD" min="2015-01-01" max="2015-12-31" cancelText="Cancelar!!!" [ngModel]="fechaNaci.toISOString()" (ionChange)="cambioFecha($event)"></ion-datetime>
+            <ion-label color="secondary">Min y Max</ion-label>
+            <ion-datetime mode="ios" placeholder="yyyy-mm-dd" display-format="YYYY MMMM DD" min="2015-01-01" max="2015-12-31" cancelText="Cancelar" [ngModel]="fechaNaci.toISOString()" (ionChange)="cambioFecha($event)"></ion-datetime>
         </ion-item>
         <ion-item color="dark">
-            <ion-label>Años</ion-label>
-            <ion-datetime placeholder="YYYY" display-format="YYYY" min="2015" max="2020" value="2016"></ion-datetime>
+            <ion-label color="secondary">Años</ion-label>
+            <ion-datetime mode="ios" placeholder="YYYY" display-format="YYYY" min="2015" max="2020" value="2016">
+            </ion-datetime>
         </ion-item>
         <ion-item color="dark">
-            <ion-label>Custom Date</ion-label>
-            <ion-datetime display-format="YYYY MMMM DD" [pickerOptions]="customPickerOptions" [(ngModel)]="customDate"></ion-datetime>
+            <ion-label color="secondary">Custom Date</ion-label>
+            <ion-datetime mode="ios" display-format="YYYY MMMM DD" [pickerOptions]="customPickerOptions" [(ngModel)]="customDate"></ion-datetime>
         </ion-item>
     </ion-list>
 </ion-content>
