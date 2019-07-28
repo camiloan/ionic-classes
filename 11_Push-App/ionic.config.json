@@ -1,0 +1,7 @@
+{
+  "name": "11_Push-App",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

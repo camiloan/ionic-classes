@@ -1,0 +1,11 @@
+{
+  "name": "12_fotosgram-server",
+  "version": "1.0.0",
+  "description": "Backend de Fotosgram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Camilo Bolaños",
+  "license": "ISC"
+}
