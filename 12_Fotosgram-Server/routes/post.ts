@@ -8,7 +8,7 @@ const postRoutes = Router();
 const fileSystem = new FileSystem();
 
 // Obtener POSTs paginados.
-postRoutes.get('/', [verificaToken], async (req: any, res: Response) => {
+postRoutes.get('/', async (req: any, res: Response) => {
     let pagina = Number(req.query.pagina) || 1;
     let skip = pagina - 1;
     skip = skip * 10;
