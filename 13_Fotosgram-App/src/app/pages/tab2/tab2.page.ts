@@ -36,6 +36,7 @@ export class Tab2Page {
       coords: null,
       posicion: false
     };
+    this.tempImages=[];
     this.route.navigateByUrl('/main/tabs/tab1');
   }
 
@@ -67,12 +68,28 @@ export class Tab2Page {
       correctOrientation: true,
       sourceType: this.camera.PictureSourceType.CAMERA
     };
+    this.procesarImagen(options);
+  }
 
+  libreria() {
+    const options: CameraOptions = {
+      quality: 60,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      correctOrientation: true,
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+    };
+    this.procesarImagen(options);
+  }
+
+  procesarImagen(options:CameraOptions){
     this.camera.getPicture(options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64 (DATA_URL):
       const img = window.Ionic.WebView.convertFileSrc(imageData);
-      console.log(img);
+      // console.log(img);
+      this.postsService.subirImagen(imageData);
       this.tempImages.push(img);
     }, (err) => {
       // Handle error

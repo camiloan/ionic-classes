@@ -10,6 +10,7 @@ import userRoutes from "./routes/usuario";
 import postRoutes from "./routes/post";
 
 const server = new Server();
+const uri = "mongodb+srv://SpartanIV:SPARTAN205_caba117@fotosgram-server-db-qtxjy.mongodb.net/test?retryWrites=true&w=majority";
 
 //Body parser
 server.app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,7 +27,7 @@ server.app.use('/user', userRoutes);
 server.app.use('/posts', postRoutes);
 
 // Conectar DB
-mongoose.connect('mongodb://localhost:27017/fotosgram',
+mongoose.connect(uri,
     { useNewUrlParser: true, useCreateIndex: true }, (err) => {
         if (err) throw err;
         console.log('Base de datos ONLINE');

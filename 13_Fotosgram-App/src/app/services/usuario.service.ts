@@ -22,10 +22,10 @@ export class UsuarioService {
     const data = { email, password };
     return new Promise(resolve => {
       this.http.post(`${URL}/user/login`, data)
-        .subscribe(resp => {
+        .subscribe(async resp => {
           console.log(resp);
           if (resp['ok']) {
-            this.guardarToken(resp['token']);
+            await this.guardarToken(resp['token']);
             resolve(true);
           } else {
             this.token = null;
@@ -36,14 +36,21 @@ export class UsuarioService {
     });
   }
 
+  logout(){
+    this.token=null;
+    this.usuario=null;
+    this.storage.clear();
+    this.navCtrl.navigateRoot('/login',{animated:true});
+  }
+
   registro(usuario: Usuario) {
     return new Promise(resolve => {
       this.http.post(`${URL}/user/create`, usuario)
-        .subscribe(resp => {
+        .subscribe(async resp => {
           console.log(resp);
           if (resp['ok']) {
             console.log('Guardo Token');
-            this.guardarToken(resp['token']);
+            await this.guardarToken(resp['token']);
             resolve(true);
           } else {
             console.log('No se pudo crear usuario');
@@ -66,6 +73,7 @@ export class UsuarioService {
   async guardarToken(token: string) {
     this.token = token;
     await this.storage.set('token', token);
+    await this.validaToken();
   }
 
   async cargarToken() {
@@ -80,7 +88,6 @@ export class UsuarioService {
       this.navCtrl.navigateRoot('/login');
       return Promise.resolve(false);
     }
-
     return new Promise<boolean>(resolve => {
       const headers = new HttpHeaders({
         'x-token': this.token
