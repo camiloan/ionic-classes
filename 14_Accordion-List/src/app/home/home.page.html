@@ -1,14 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Ionic Accordion
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+
+    <app-mi-accordion *ngFor="let technology of technologies" name="{{ technology.name }}" description="{{ technology.description }}" image="{{ technology.image }}" (change)="captureName($event)"></app-mi-accordion>
+
 </ion-content>
